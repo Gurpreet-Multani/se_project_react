@@ -1,0 +1,2 @@
+The current date that can be generated using the Date() object’s toLocaleString() method.
+  ⇒ See hint #1 in the Hints toggle at the bottom of the page for more help.

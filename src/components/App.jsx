@@ -3,17 +3,38 @@ import reactLogo from "../assets/react.svg";
 import viteLogo from "/vite.svg";
 import "../blocks/App.css";
 import Header from "./Header";
-import "./Main";
-import "./Footer";
-import "./ModalWithForm";
-import "./ItemModal";
+import Main from "./Main";
+import Footer from "./Footer";
+import ModalWithForm from "./ModalWithForm";
+import ItemModal from "./ItemModal";
+import "../utils/clothingItems.js";
+import { defaultClothingItems } from "../utils/clothingItems.js";
 
-//header component
-//logo aka WTWR img
-//The current date that can be generated using the Date() object’s toLocaleString() method.
-//An “Add Clothes” button that opens ModalWithForm
-//The user’s name, location, and avatar (all hard-coded at this point)
+function App() {
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  //variable = meant to track which modal is currently open
+  //function = just to change the status of the variable
+  const [activeModal, setActiveModal] = useState("");
+  //function to open modal
+  function handleOpenAddItemModal() {
+    setActiveModal("add-item");
+  }
+  //function to close modal
+  function handleCloseModal() {
+    setActiveModal("");
+  }
 
-function App() {}
+  return (
+    <div className="app">
+      <Header AddItemClick={handleOpenAddItemModal} />{" "}
+      <Main clothingItems={clothingItems} />
+      <ModalWithForm
+        isOpen={activeModal === "add-item"}
+        onClose={handleCloseModal}
+      />
+      <Footer />
+    </div>
+  );
+}
 
 export default App;
