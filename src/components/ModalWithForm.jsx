@@ -1,11 +1,12 @@
 import "../blocks/Modal.css";
+import Union from "../assets/Union.svg";
 
 function ModalWithForm({ isOpen, onClose }) {
   return (
     <div className={`modal ${isOpen ? "modal_is-opened" : ""}`}>
       <div className="modal__container">
         <button className="modal__close-btn" onClick={onClose}>
-          <img src="src\assets\Union.svg" alt="X" />
+          <img src={Union} alt="X" />
         </button>
         <p className="modal__title">New garment</p>
         <div className="modal__form">
