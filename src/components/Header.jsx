@@ -1,6 +1,7 @@
 import "../blocks/header.css";
 import currentDate from "../utils/date.js";
 import app from "../components/App.jsx";
+import "../assets/HeaderLogo.svg";
 
 function Header({ AddItemClick }) {
   return (
