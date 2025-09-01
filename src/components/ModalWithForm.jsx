@@ -41,7 +41,11 @@ function ModalWithForm({ isOpen, onClose }) {
               <input type="radio" name="weather-type" value="cold" />
               Cold
             </label>
-            <button type="submit" class="modal__submit-btn" onClick={onClose}>
+            <button
+              type="submit"
+              className="modal__submit-btn"
+              onClick={onClose}
+            >
               Add garment
             </button>
           </div>

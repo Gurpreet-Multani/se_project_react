@@ -1,19 +1,18 @@
-import { useState } from "react";
-import reactLogo from "../assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useState, useEffect } from "react";
 import "../blocks/App.css";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 import ModalWithForm from "./ModalWithForm";
-import ItemModal from "./ItemModal";
 import "../utils/clothingItems.js";
 import { defaultClothingItems } from "../utils/clothingItems.js";
+import { getWeatherData } from "../utils/weather.js";
+import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
 
 function App() {
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
-  //variable = meant to track which modal is currently open
-  //function = just to change the status of the variable
+
+  //state for adding and closing a modal
   const [activeModal, setActiveModal] = useState("");
   //function to open modal
   function handleOpenAddItemModal() {
@@ -24,16 +23,48 @@ function App() {
     setActiveModal("");
   }
 
+  const [weatherData, setWeatherData] = useState({ name: "", temp: "0" });
+  //basically renaming the inital keys
+
+  //calls the api function
+  //data represents the .json formate at the ending of the api function
+  //we are setting the value of weatherdats with the setWeatherData setter
+  useEffect(() => {
+    getWeatherData()
+      .then((data) => {
+        setWeatherData(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+
+  //handleToggleSwithcChange Function
+  const handleToggleSwitchChange = () => {
+    currentTemperatureUnit === "F"
+      ? setCurrentTemperatureUnit("C")
+      : setCurrentTemperatureUnit("F");
+  };
+
   return (
-    <div className="app">
-      <Header AddItemClick={handleOpenAddItemModal} />{" "}
-      <Main clothingItems={clothingItems} />
-      <ModalWithForm
-        isOpen={activeModal === "add-item"}
-        onClose={handleCloseModal}
-      />
-      <Footer />
-    </div>
+    <CurrentTemperatureUnitContext.Provider
+      value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+    >
+      <div className="app">
+        <Header
+          AddItemClick={handleOpenAddItemModal}
+          weatherData={weatherData}
+        />
+        <Main clothingItems={clothingItems} weatherData={weatherData} />
+        <ModalWithForm
+          isOpen={activeModal === "add-item"}
+          onClose={handleCloseModal}
+        />
+        <Footer />
+      </div>
+    </CurrentTemperatureUnitContext.Provider>
   );
 }
 

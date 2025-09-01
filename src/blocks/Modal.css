@@ -41,6 +41,7 @@
   appearance: none;
   border: none;
   background-color: transparent;
+  padding: 10px;
 }
 
 .modal__title {

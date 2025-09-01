@@ -1,0 +1,81 @@
+/* ItemModal.css */
+
+.item-modal {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Added background overlay */
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  padding: 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 0.3s linear, visibility 0.3s;
+  visibility: hidden;
+  z-index: 1000; /* Ensure modal appears above other content */
+}
+
+.item-modal_is-opened {
+  opacity: 1;
+  visibility: visible;
+}
+
+.item-modal__container {
+  background-color: white;
+  border-radius: 16px;
+  position: relative;
+  max-width: 498px;
+  height: 610px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Add styles for the close button */
+.item-modal__close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+/* Add styles for the modal image */
+.item-modal__image {
+  width: 100%;
+  max-width: 498px;
+  height: auto;
+  border-radius: 12px 12px 0 0;
+  object-fit: contain;
+}
+
+.item-modal__text {
+  margin-top: 20px;
+  margin-left: 32px;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  letter-spacing: 0;
+  margin-bottom: 0;
+}
+
+.item-modal__text2 {
+  margin-top: 12px;
+  padding-left: 32px;
+  padding-bottom: 32px;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  letter-spacing: 0;
+}

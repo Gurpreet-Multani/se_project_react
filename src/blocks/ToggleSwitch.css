@@ -1,0 +1,87 @@
+.Toggle__container {
+  margin-left: auto;
+  margin-right: 20px;
+  height: 28px;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  background-image: url(../assets/HeaderBTN.svg);
+  position: relative;
+}
+
+.Toggle__input {
+  appearance: none;
+  border: none;
+  height: 28px;
+  width: 28px;
+  background-image: url(../assets/Circle.svg);
+  background-repeat: no-repeat;
+  margin-left: 0;
+  position: relative;
+  z-index: 1;
+  padding: 10px;
+}
+
+.Toggle__input:checked {
+  appearance: none;
+  border: none;
+  height: 28px;
+  width: 28px;
+  background-image: url(../assets/Circle.svg);
+  background-repeat: no-repeat;
+  margin-right: 0;
+  margin-left: auto;
+  position: relative;
+  z-index: 1;
+  transition: margin-left 100s ease-in;
+  padding: 10px;
+}
+
+.Toggle__fahrenheit-label {
+  position: absolute;
+  color: white; /* Default: active/selected state */
+  left: 10px;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 2;
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  /* Allow clicks to pass through to input below */
+  pointer-events: none;
+}
+
+.Toggle__celsius-label {
+  position: absolute;
+  color: #00000080; /* Default: inactive/unselected state */
+  right: 10px;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 2;
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  /* Allow clicks to pass through to input below */
+  pointer-events: none;
+}
+
+/* When checkbox is checked  change colors */
+.Toggle__input:checked ~ .Toggle__fahrenheit-label {
+  color: #00000080; /* F */
+}
+.Toggle__input:checked ~ .Toggle__celsius-label {
+  color: white; /* C */
+}
+
+/* When checkbox is NOT checked  change colors */
+.Toggle__input:not(:checked) ~ .Toggle__fahrenheit-label {
+  color: white; /* F */
+}
+
+.Toggle__input:not(:checked) ~ .Toggle__celsius-label {
+  color: #00000080; /* C */
+}
