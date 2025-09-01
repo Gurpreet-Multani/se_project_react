@@ -3,6 +3,7 @@ import WeatherCard from "./WeatherCard.jsx";
 import ItemCard from "../components/ItemCard.jsx";
 import "../blocks/Main.css";
 import "../blocks/ItemCard.css";
+import "../blocks/index.css";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
 
 function Main({ clothingItems, weatherData }) {
