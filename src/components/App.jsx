@@ -8,7 +8,7 @@ import "../utils/clothingItems.js";
 import { defaultClothingItems } from "../utils/clothingItems.js";
 import { getWeatherData } from "../utils/weather.js";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
-import "../blocks/index.css";
+import "../index.css";
 
 function App() {
   const [clothingItems, setClothingItems] = useState(defaultClothingItems);
