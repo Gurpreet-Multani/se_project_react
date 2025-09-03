@@ -12,7 +12,7 @@ function ToggleSwitch() {
       <input
         className="Toggle__input"
         type="checkbox"
-        checked={currentTemperatureUnit === "F"}
+        checked={currentTemperatureUnit === "C"}
         onChange={handleToggleSwitchChange}
       />
       <span className="Toggle__fahrenheit-label">F</span>

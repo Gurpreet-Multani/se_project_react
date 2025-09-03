@@ -17,7 +17,7 @@ function Main({ clothingItems, weatherData }) {
   };
 
   //saying current temp is equivalent to api weather/real weather
-  const currentTemp = weatherData.temp[currentTemperatureUnit];
+  const currentTemp = weatherData.temp.F;
   //changing the call back function in the weathertype to the currenttemp
   const weatherType = getWeatherType(currentTemp);
   //made variable that filter the clothing item based on the weather type
