@@ -1,0 +1,26 @@
+<svg width="1361" height="80" viewBox="0 0 1361 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" width="1360" height="80" rx="12" fill="#6CA6C7"/>
+<mask id="mask0_52703_61" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1361" height="80">
+<rect x="0.5" width="1360" height="80" rx="12" fill="#00A3FF"/>
+</mask>
+<g mask="url(#mask0_52703_61)">
+<g filter="url(#filter0_f_52703_61)">
+<path d="M1292.23 -42C1308.31 -41.9999 1322.59 -34.2472 1331.52 -22.2744C1335.39 -23.5119 1339.5 -24.1816 1343.77 -24.1816C1365.91 -24.1816 1383.86 -6.23242 1383.86 15.9092C1383.86 37.7047 1366.47 55.4384 1344.81 55.9873L1343.77 56H1240.68V55.7393C1227.02 53.8768 1216.5 42.1686 1216.5 28C1216.5 12.796 1228.62 0.422462 1243.72 0.0107422C1247.11 -23.7405 1267.54 -42 1292.23 -42Z" fill="#D8D8D8" fill-opacity="0.7"/>
+</g>
+<g filter="url(#filter1_f_52703_61)">
+<path d="M1241.23 12C1257.31 12.0001 1271.59 19.7528 1280.52 31.7256C1284.39 30.4881 1288.5 29.8184 1292.77 29.8184C1314.91 29.8184 1332.86 47.7676 1332.86 69.9092C1332.86 91.7047 1315.47 109.438 1293.81 109.987L1292.77 110H1189.68V109.739C1176.02 107.877 1165.5 96.1686 1165.5 82C1165.5 66.796 1177.62 54.4225 1192.72 54.0107C1196.11 30.2595 1216.54 12 1241.23 12Z" fill="#D8D8D8" fill-opacity="0.7"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_52703_61" x="1212.5" y="-46" width="175.363" height="106" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_52703_61"/>
+</filter>
+<filter id="filter1_f_52703_61" x="1161.5" y="8" width="175.363" height="106" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_52703_61"/>
+</filter>
+</defs>
+</svg>
