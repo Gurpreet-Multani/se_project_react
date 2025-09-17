@@ -58,9 +58,29 @@
   object-fit: contain;
 }
 
-.item-modal__text {
+.item-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 32px 0;
+}
+
+.item-modal__delete-btn {
+  background-color: transparent;
+  border: none;
+  color: #ff4d00;
+  cursor: pointer;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0;
+  align-items: center;
   margin-top: 20px;
-  margin-left: 32px;
+}
+
+.item-modal__text {
+  /* margin-top: 20px; */ /* This is now handled by .item-modal__header */
+  /* margin-left: 32px; */ /* This is now handled by .item-modal__header */
   font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 24px;
@@ -71,11 +91,20 @@
 
 .item-modal__text2 {
   margin-top: 12px;
-  padding-left: 32px;
-  padding-bottom: 32px;
+  margin-left: 32px;
+  margin-bottom: 32px;
   font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 24px;
   font-weight: bold;
   letter-spacing: 0;
+}
+.item-modal__text3 {
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  letter-spacing: 0;
+  position: relative;
+  top: 24px;
 }

@@ -3,8 +3,8 @@ import { useState } from "react";
 import ItemModal from "./ItemModal";
 import "../blocks/ItemCard.css";
 
-function ItemCard({ data }) {
-  const [activateModal, SetActivatedModal] = useState("");
+function ItemCard({ data, onCardClick, onCanDelete, onClose }) {
+  const [activateModal, SetActivatedModal] = useState(""); // <-- Unnecessary state here
 
   function AddClassModal() {
     SetActivatedModal("Add-Class");
@@ -15,13 +15,15 @@ function ItemCard({ data }) {
   }
 
   return (
-    <div className="card" onClick={AddClassModal}>
+    <div className="card" onClick={() => onCardClick(data)}>
       <h2 className="card__title">{data.name}</h2>
-      <img src={data.link} alt={data.name} className="card__image" />
+      <img src={data.imageUrl} alt={data.name} className="card__image" />
       <ItemModal
-        AddTheClass={activateModal === "Add-Class"}
+        AddTheClass={activateModal === "Add-Class"} // <-- Renders a new modal for each card
         RemoveTheClass={RemoveClassModal}
         data={data}
+        onClose={onClose}
+        onCanDelete={onCanDelete}
       />
     </div>
   );

@@ -1,0 +1,18 @@
+.Sidebar {
+  display: flex;
+  gap: 16px;
+  margin-top: 47px;
+  margin-left: 40px;
+  height: 56px;
+  width: 229px;
+  padding-right: 116px;
+}
+.Sidebar__name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+.Sidebar__img {
+}

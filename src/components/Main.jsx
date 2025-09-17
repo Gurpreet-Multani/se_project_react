@@ -1,26 +1,46 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import WeatherCard from "./WeatherCard.jsx";
 import ItemCard from "../components/ItemCard.jsx";
 import "../blocks/Main.css";
 import "../blocks/ItemCard.css";
 import "../index.css";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
+import ItemModal from "../components/ItemModal.jsx";
 
-function Main({ clothingItems, weatherData }) {
+function Main({ clothingItems, weatherData, onClose, onCardDelete }) {
+  const [selectedCard, setSelectedCard] = useState(null);
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
-  //Function to see what the weather type is for is it hot or is it cold or warm
-  const getWeatherType = (temperature) => {
-    if (temperature >= 86) return "hot";
-    if (temperature <= 65) return "cold";
-    return "warm";
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
   };
 
-  //saying current temp is equivalent to api weather/real weather
-  const currentTemp = weatherData.temp.F;
-  //changing the call back function in the weathertype to the currenttemp
-  const weatherType = getWeatherType(currentTemp);
-  //made variable that filter the clothing item based on the weather type
+  const handleCloseModal = () => {
+    setSelectedCard(null);
+  };
+
+  const getWeatherType = (temperature, unit) => {
+    if (unit === "F") {
+      if (temperature >= 86) {
+        return "hot";
+      } else if (temperature <= 65) {
+        return "cold";
+      } else {
+        return "warm";
+      }
+    } else if (unit === "C") {
+      if (temperature >= 30) {
+        return "hot";
+      } else if (temperature <= 18) {
+        return "cold";
+      } else {
+        return "warm";
+      }
+    }
+  };
+
+  const currentTemp = weatherData.temp?.[currentTemperatureUnit];
+  const weatherType = getWeatherType(currentTemp, currentTemperatureUnit);
   const filteredItems = clothingItems.filter(
     (item) => item.weather === weatherType
   );
@@ -29,14 +49,30 @@ function Main({ clothingItems, weatherData }) {
     <main className="main">
       <WeatherCard weatherData={weatherData} />
       <p className="main__text">
-        Today is {weatherData.temp?.[currentTemperatureUnit]} °
-        {currentTemperatureUnit} / You may want to wear:
+        Today is {currentTemp}°{currentTemperatureUnit} / You may want to wear:
       </p>
       <ul className="main__card-list">
         {filteredItems.map((item) => {
-          return <ItemCard key={item._id} data={item} />;
+          return (
+            <ItemCard
+              key={item._id}
+              data={item}
+              onCardClick={handleCardClick}
+              onCanDelete={onCardDelete}
+              onClose={handleCloseModal}
+            />
+          );
         })}
       </ul>
+      {selectedCard && (
+        <ItemModal
+          AddTheClass={selectedCard !== null}
+          RemoveTheClass={handleCloseModal}
+          data={selectedCard}
+          onCardDelete={onCardDelete}
+          onClose={handleCloseModal}
+        />
+      )}
     </main>
   );
 }

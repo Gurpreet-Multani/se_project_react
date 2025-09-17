@@ -1,0 +1,34 @@
+.clothes-section {
+  display: flex;
+  gap: 20px;
+  margin-top: 47px;
+  align-items: center;
+}
+
+.clothes-section__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.clothes-text {
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  width: 94px;
+  height: 25px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.clothes-btn {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #00000099;
+  width: 88px;
+  height: 25px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
