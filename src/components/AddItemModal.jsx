@@ -1,4 +1,4 @@
-function ItemModal() {
+function AddItemModal() {
   // It's not common to log something on every render, but this is syntactically correct
   console.log("IGNORE THIS");
   return (
@@ -7,4 +7,4 @@ function ItemModal() {
   );
 }
 
-export default ItemModal;
+export default AddItemModal;
