@@ -1,5 +1,7 @@
 //ignore this file
 
-import ItemModal from "./ItemModal";
+function ItemModal() {
+    return console.log(IGNORE THIS)
+}
 
 export ItemModal
