@@ -3,7 +3,7 @@ import { useState } from "react";
 import ItemModal from "./ItemModal";
 import "../blocks/ItemCard.css";
 
-function ItemCard({ data, onCardClick, onCanDelete, onClose }) {
+function ItemCard({ data, onCardClick, onCardDelete, onClose }) {
   const [activateModal, SetActivatedModal] = useState(""); // <-- Unnecessary state here
 
   function AddClassModal() {
@@ -23,7 +23,7 @@ function ItemCard({ data, onCardClick, onCanDelete, onClose }) {
         RemoveTheClass={RemoveClassModal}
         data={data}
         onClose={onClose}
-        onCanDelete={onCanDelete}
+        onCardDelete={onCardDelete}
       />
     </div>
   );

@@ -1,10 +1,17 @@
-import HeaderPFP from "../assets/HeaderPFP.svg";
-
-function SideBar() {
+function SideBar({ user, onLogout }) {
   return (
-    <div className="Sidebar">
-      <img className="Sidebar__img" src={HeaderPFP} alt="PFP" />
-      <p className="Sidebar__name">Terrence Tegegne</p>
+    <div className="sidebar">
+      <div className="sidebar__user">
+        <img
+          src={user?.avatar}
+          alt={`${user?.name}'s avatar`}
+          className="sidebar__avatar"
+        />
+        <p className="sidebar__username">{user?.name}</p>
+      </div>
+      <button onClick={onLogout} className="sidebar__logout">
+        Log out
+      </button>
     </div>
   );
 }

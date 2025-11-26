@@ -24,7 +24,7 @@ function ClothesSection({
             key={item._id}
             data={item}
             onCardClick={onCardClick} // Pass the prop down
-            onCanDelete={onCardDelete}
+            onCardDelete={onCardDelete}
             onClose={onClose}
           />
         ))}

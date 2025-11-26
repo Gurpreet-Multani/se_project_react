@@ -1,46 +1,47 @@
-const baseUrl = "http://localhost:3001/items";
+const baseUrl = "http://localhost:3001";
+
+const processServerResponse = (res) => {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error: ${res.status}`);
+};
 
 //FETCHED ALL THE ITEMS
 export const getItems = () => {
-  return fetch(baseUrl).then((res) => {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
-  });
+  return fetch(`${baseUrl}/items`).then(processServerResponse);
 };
 
 //POST /items POST
-export const addItem = (item) => {
-  return fetch(baseUrl, {
+export const addItem = ({ name, imageUrl, weather }) => {
+  // Client-side validation to prevent requests with missing data
+  if (!name || !imageUrl || !weather) {
+    return Promise.reject("Name, Image URL, and weather type are required.");
+  }
+
+  const token = localStorage.getItem("jwt");
+  return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
-      name: item.name,
-      imageUrl: item.imageUrl,
-      weather: item.weather,
+      name,
+      imageUrl,
+      weather: weather.toLowerCase(),
     }),
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(processServerResponse); // Assuming you have a response handler
 };
 
 // DELETE /items/:id DELETE
 export const removeItem = (item) => {
-  return fetch(`${baseUrl}/${item._id}`, {
+  const token = localStorage.getItem("jwt");
+  return fetch(`${baseUrl}/items/${item._id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(processServerResponse);
 };

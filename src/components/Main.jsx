@@ -58,7 +58,7 @@ function Main({ clothingItems, weatherData, onClose, onCardDelete }) {
               key={item._id}
               data={item}
               onCardClick={handleCardClick}
-              onCanDelete={onCardDelete}
+              onCardDelete={onCardDelete}
               onClose={handleCloseModal}
             />
           );

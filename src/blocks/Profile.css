@@ -1,3 +1,10 @@
 .Profile-ROW {
   display: flex;
 }
+
+.profile__weather-text {
+  margin-top: 40px;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}

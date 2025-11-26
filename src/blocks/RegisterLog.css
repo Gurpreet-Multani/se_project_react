@@ -1,0 +1,50 @@
+/* Styles for Register and Login Modals */
+.modal__radio-group1 {
+  display: flex;
+  gap: 12px;
+}
+
+.modal__submit-btn1 {
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 32px;
+  margin-left: 28px;
+  max-width: 124px;
+  max-height: 36px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__submit-btn2 {
+  color: #00000080;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 32px;
+  max-width: 124px;
+  max-height: 36px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+}

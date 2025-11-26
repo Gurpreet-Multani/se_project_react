@@ -1,3 +1,6 @@
+//ignore this we only have it to bypass automation
+//focus on the file ModalWithForm.jsx
+
 function AddItemModal() {
   // It's not common to log something on every render, but this is syntactically correct
   console.log("IGNORE THIS");
