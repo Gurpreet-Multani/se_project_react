@@ -1,4 +1,4 @@
-function SideBar({ user, onLogout }) {
+function SideBar({ user, onLogout, onChangeProfile }) {
   return (
     <div className="sidebar">
       <div className="sidebar__user">
@@ -9,7 +9,14 @@ function SideBar({ user, onLogout }) {
         />
         <p className="sidebar__username">{user?.name}</p>
       </div>
-      <button onClick={onLogout} className="sidebar__logout">
+      <button
+        type="button"
+        onClick={onChangeProfile}
+        className="sidebar__button"
+      >
+        Change profile data
+      </button>
+      <button onClick={onLogout} className="sidebar__logout sidebar__button">
         Log out
       </button>
     </div>

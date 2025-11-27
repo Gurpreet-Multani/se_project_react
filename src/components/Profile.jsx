@@ -15,6 +15,7 @@ function Profile({
   weatherData,
   onLogout,
   user,
+  onChangeProfile,
   isSideBarOpen,
 }) {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -31,24 +32,31 @@ function Profile({
 
   return (
     <div className="Profile-ROW">
-      {isSideBarOpen && <SideBar user={user} onLogout={onLogout} />}
+      {isSideBarOpen && (
+        <SideBar
+          user={user}
+          onLogout={onLogout}
+          onChangeProfile={onChangeProfile}
+        />
+      )}
       <div>
         <div className="profile__weather-section">
-          <WeatherCard weatherData={weatherData} />
-          <p className="profile__weather-text">
-            Today is {currentTemp}°{currentTemperatureUnit} / You may want to
-            wear:
-          </p>
+          <WeatherCard weatherData={weatherData} isVisible={!isSideBarOpen} />
+          {!isSideBarOpen && (
+            <p className="profile__weather-text">
+              Today is {currentTemp}°{currentTemperatureUnit} / You may want to
+              wear:
+            </p>
+          )}
         </div>
-        {isSideBarOpen && (
-          <ClothesSection
-            clothingItems={clothingItems}
-            AddItemClick={AddItemClick}
-            onCardClick={handleCardClick}
-            onCardDelete={onCardDelete}
-            onClose={onClose}
-          />
-        )}
+        <ClothesSection
+          clothingItems={clothingItems}
+          AddItemClick={AddItemClick}
+          onCardClick={handleCardClick}
+          onCardDelete={onCardDelete}
+          isHeaderVisible={isSideBarOpen}
+          onClose={onClose}
+        />
       </div>
       {selectedCard && (
         <ItemModal

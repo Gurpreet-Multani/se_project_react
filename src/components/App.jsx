@@ -9,6 +9,7 @@ import ItemModal from "./ItemModal";
 import RegisterModal from "./RegisterModal";
 import LoginModal from "./LoginModal";
 import Profile from "./Profile.jsx";
+import ChangeProfile from "./ChangeProfile.jsx";
 import ProtectedRoute from "./ProtectedRoute";
 
 import { getWeatherData } from "../utils/weather.js";
@@ -48,6 +49,10 @@ function App() {
 
   function handleLoginModal() {
     setActiveModal("login");
+  }
+
+  function handleChangeProfileModal() {
+    setActiveModal("change-profile");
   }
 
   const handleCardClick = (card) => {
@@ -142,6 +147,17 @@ function App() {
     navigate("/");
   };
 
+  const handleUpdateUser = (values) => {
+    const token = localStorage.getItem("jwt");
+    auth
+      .updateUser(values, token)
+      .then((updatedUser) => {
+        setCurrentUser(updatedUser);
+        handleCloseModal();
+      })
+      .catch((err) => console.error("Update user failed:", err));
+  };
+
   const handleCardDelete = (cardId) => {
     const token = localStorage.getItem("jwt");
     removeItem(cardId, token)
@@ -192,6 +208,7 @@ function App() {
                     onCardClick={handleCardClick}
                     onLogout={handleLogout} // This was already here, which is great!
                     user={currentUser}
+                    onChangeProfile={handleChangeProfileModal}
                     isSideBarOpen={isSideBarOpen}
                     onCardDelete={handleCardDelete}
                   />
@@ -230,6 +247,12 @@ function App() {
             onClose={handleCloseModal}
             onLogin={handleLogin}
             onRegisterModal={handleRegisterModal}
+          />
+
+          <ChangeProfile
+            isOpen={activeModal === "change-profile"}
+            onClose={handleCloseModal}
+            onUpdateUser={handleUpdateUser}
           />
         </div>
       </CurrentTemperatureUnitContext.Provider>

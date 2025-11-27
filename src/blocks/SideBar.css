@@ -1,18 +1,65 @@
-.Sidebar {
+.sidebar {
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  gap: 20px; /* Space between profile info and logout button */
   margin-top: 47px;
   margin-left: 40px;
-  height: 56px;
-  width: 229px;
-  padding-right: 116px;
 }
-.Sidebar__name {
+
+.sidebar__user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.sidebar__name {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 20px;
 }
-.Sidebar__img {
+
+.sidebar__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar__avatar_placeholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.sidebar__logout-button {
+  background-color: transparent;
+  border: none;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+
+  padding: 0;
+}
+
+.sidebar__button {
+  appearance: none;
+  background: none;
+  border: none;
+  margin-right: auto;
+  font-family: "Cabinet-Grotesk", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
 }

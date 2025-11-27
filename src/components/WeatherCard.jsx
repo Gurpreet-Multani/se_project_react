@@ -10,7 +10,11 @@ import nightClear from "../assets/night/SunnyNight.svg";
 import nightCloudy from "../assets/night/CloudyNight.svg";
 import nightRainy from "../assets/night/RainNight.svg";
 
-function WeatherCard({ weatherData }) {
+function WeatherCard({ weatherData, isVisible = true }) {
+  if (!isVisible) {
+    return null;
+  }
+
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   //function for Dynamic WeatherCard Image

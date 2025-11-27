@@ -8,16 +8,19 @@ function ClothesSection({
   AddItemClick,
   onCardDelete,
   onClose,
-  onCardClick, // Add onCardClick as a prop
+  onCardClick,
+  isHeaderVisible,
 }) {
   return (
     <div>
-      <div className="clothes-section">
-        <p className="clothes-text">Your items</p>
-        <button className="clothes-btn" onClick={AddItemClick}>
-          + Add new
-        </button>
-      </div>
+      {isHeaderVisible && (
+        <div className="clothes-section">
+          <p className="clothes-text">Your items</p>
+          <button className="clothes-btn" onClick={AddItemClick}>
+            + Add new
+          </button>
+        </div>
+      )}
       <ul className="clothes-section__items">
         {clothingItems.map((item) => (
           <ItemCard

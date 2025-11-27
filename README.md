@@ -2,13 +2,10 @@
 
 ## Work-In-Progress
 
-<<<<<<< HEAD
 CSS WILL BE FINISHED FULLY FOR THE NEXT PROJECT PLEASE KEEP THAT IN MIND
 
 [Deployment-Link-Frontend](https://Gurpreet-Multani.github.io/se_project_react/)
-
 [Link-Backend](https://github.com/Gurpreet-Multani/se_project_express/tree/main)
-=======
 [Deployment-Link](https://Gurpreet-Multani.github.io/se_project_react/)
 
 # 🌞 WTWR: What to Wear React App
@@ -17,11 +14,11 @@ A stylish, responsive weather application built with **React** that suggests app
 
 ## ✨ Features
 
-* **Current Weather Display:** Shows the current temperature and weather conditions for a user's location.
-* **Outfit Suggestions:** Provides intelligent clothing recommendations (e.g., "T-shirt," "Jacket," "Sweatshirt") based on the current weather.
-* **Intuitive UI:** A clean and modern user interface designed for a seamless experience.
-* **Temperature Toggle:** Allows users to switch between **Fahrenheit ($^\circ F$)** and **Celsius ($^\circ C$)** temperature units.
-* **Interactive Cards:** Clothing cards change dynamically based on temperature ranges.
+- **Current Weather Display:** Shows the current temperature and weather conditions for a user's location.
+- **Outfit Suggestions:** Provides intelligent clothing recommendations (e.g., "T-shirt," "Jacket," "Sweatshirt") based on the current weather.
+- **Intuitive UI:** A clean and modern user interface designed for a seamless experience.
+- **Temperature Toggle:** Allows users to switch between **Fahrenheit ($^\circ F$)** and **Celsius ($^\circ C$)** temperature units.
+- **Interactive Cards:** Clothing cards change dynamically based on temperature ranges.
 
 ---
 
@@ -29,13 +26,13 @@ A stylish, responsive weather application built with **React** that suggests app
 
 The WTWR application is built using a modern front-end stack:
 
-| Technology | Description |
-| :--- | :--- |
-| **React** | The core JavaScript library for building the user interface. |
-| **JavaScript (ES6+)** | The primary programming language. |
-| **HTML5** | Provides the structure of the web application. |
-| **CSS3** | Used for styling and creating a responsive design. |
-| **External API** | Integrates with a weather API (e.g., OpenWeatherMap) to fetch real-time weather data. |
+| Technology            | Description                                                                           |
+| :-------------------- | :------------------------------------------------------------------------------------ |
+| **React**             | The core JavaScript library for building the user interface.                          |
+| **JavaScript (ES6+)** | The primary programming language.                                                     |
+| **HTML5**             | Provides the structure of the web application.                                        |
+| **CSS3**              | Used for styling and creating a responsive design.                                    |
+| **External API**      | Integrates with a weather API (e.g., OpenWeatherMap) to fetch real-time weather data. |
 
 ---
 
@@ -55,16 +52,17 @@ To run this project locally, follow these steps:
     npm install
     ```
 3.  **Set up the API Key:**
-    * This app requires a weather API key (e.g., from OpenWeatherMap).
-    * Create a file named `.env` in the root directory.
-    * Add your API key in the following format:
-        ```env
-        REACT_APP_WEATHER_API_KEY=YOUR_API_KEY_HERE
-        ```
+    - This app requires a weather API key (e.g., from OpenWeatherMap).
+    - Create a file named `.env` in the root directory.
+    - Add your API key in the following format:
+      ```env
+      REACT_APP_WEATHER_API_KEY=YOUR_API_KEY_HERE
+      ```
 
 ### **Running the App**
 
 Start the development server:
+
 ```bash
 npm start
->>>>>>> 886b50be81f147051561bca91fc7e30a5ba065aa
+```
